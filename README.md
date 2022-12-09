@@ -14,6 +14,8 @@ choice.
 
 ### Usage
 From the command line: `microhook [info|warning|error|critical] [your message]`  
+You can send a message once a given command terminates with `[your command] && microhook [info|warning|error|critical] [your message]`
+
 From Python
 ```python
 from microhook.microhook import MicroHook
