@@ -4,6 +4,7 @@ import os
 import aiohttp
 import fire
 from discord import Webhook, Embed
+from typing import Optional
 
 WEBHOOK_URL = os.getenv("MICROHOOK_URL")
 
@@ -15,8 +16,8 @@ color_scheme = {
 }
 
 
-def build_embed(message: str, level: str, title: str | None = None) -> Embed:
-    if title is None:
+def build_embed(message: str, level: str, title: Optional[str] = None) -> Embed:
+    if not title:
         title = level.capitalize()
 
     embed = Embed(title=title, description=message, color=color_scheme[level])
